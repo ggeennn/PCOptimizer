@@ -1,0 +1,7 @@
+*.exe
+
+~*.xlsx
+
+*.log
+
+*.csv

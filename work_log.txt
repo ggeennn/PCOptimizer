@@ -1,0 +1,5 @@
+2024/12/27-----------------create project
+1. create package management script (GetPackages.ps1)
+===to do===
+1. script optimize
+
