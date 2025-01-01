@@ -1,52 +1,82 @@
 # PCOptimizer
 
-一个用于 Windows PC 系统优化和软件包管理的工具集。
+一个用于 Windows PC 系统优化、安全维护和软件包管理的工具集。
 
 ## 项目目标
 
-- 自动化收集系统已安装的软件包信息
-- 提供系统优化建议和最佳实践
-- 追踪系统优化和软件管理的进度
+- 保护个人数据安全和隐私
+- 优化系统性能和维护
+- 自动化系统维护任务
+- 提供编程学习路径
+
+## 主要功能
+
+1. **数据安全与隐私保护**
+   - 密码管理（Bitwarden）
+   - 文件加密（VeraCrypt）
+   - 隐私数据清理（BleachBit）
+
+2. **系统优化与维护**
+   - 系统清理（CCleaner, DISM++）
+   - 性能优化（CPU, GPU）
+   - 系统监控（Sysinternals Suite）
+
+3. **自动化工具**
+   - 软件包管理（winget）
+   - 自动清理计划任务
+   - 数据自动备份
 
 ## 项目结构
 
-- `GetPackages.ps1`: PowerShell 脚本，用于自动获取系统已安装的软件包信息
-- `installed_list.csv`: 存储系统当前已安装的软件包清单
-- `optimization_suggestions.md`: 系统优化建议和最佳实践指南
-- `work_log.txt`: 项目进度和变更日志
+- `GetPackages.ps1`: PowerShell 脚本，用于软件包管理
+- `optimization_suggestions.md`: 系统优化和安全维护指南
+- `installed_list.csv`: 已安装软件清单
+- `work_log.txt`: 项目进度日志
 
 ## 使用方法
 
-1. 运行软件包扫描：
+1. **基础安全设置**：
    ```powershell
-   .\GetPackages.ps1
+   # 安装必要的安全工具
+   winget install Bitwarden.Bitwarden
+   winget install IDRIX.VeraCrypt
    ```
 
-2. 查看优化建议：
-   打开 `optimization_suggestions.md` 获取系统优化的具体建议
+2. **系统维护**：
+   ```powershell
+   # 运行软件包扫描
+   .\GetPackages.ps1
+   
+   # 设置自动清理任务
+   schtasks /create /tn "CCleaner_AutoClean" /tr "C:\Program Files\CCleaner\CCleaner.exe /AUTO" /sc daily /mo 3
+   ```
 
-3. 追踪优化进度：
-   通过 `work_log.txt` 记录和查看优化实施进度
+3. **查看建议**：
+   阅读 `optimization_suggestions.md` 获取详细的优化和安全建议
+
+## 维护计划
+
+- **每3天**：系统基础清理
+- **每周**：安全扫描和数据备份
+- **每月**：系统深度优化
 
 ## 开发计划
 
-- [ ] 完善软件包扫描功能
-- [ ] 添加自动化优化脚本
-- [ ] 实现优化建议的自动检测
-- [ ] 开发图形用户界面
+- [ ] 实现自动化维护脚本
+- [ ] 开发系统监控工具
+- [ ] 创建文件加密程序
+- [ ] 实现自动化维护面板
 
-## 更新日志
+## 学习路径
 
-### [未发布]
-- 初始项目设置
-- 基础功能实现
+1. **基础项目**：
+   - PowerShell 自动化脚本
+   - 文件备份工具
 
-## 贡献指南
-
-欢迎提供建议和改进意见，可以通过以下方式��与：
-1. 提交新的优化建议
-2. 改进 PowerShell 脚本
-3. 补充系统优化最佳实践
+2. **进阶项目**：
+   - 系统监控工具
+   - 文件加密程序
+   - 维护自动化面板
 
 ## 许可证
 
